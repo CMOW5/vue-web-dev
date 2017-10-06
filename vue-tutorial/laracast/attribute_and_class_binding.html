@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+
+	<style type="text/css">
+		.color-red { color : red; }
+	</style>
+
+</head>
+<body>
+	
+	<div id="root"> 
+		<!--
+		<button v-bind:title="newTitle">Hover Over Me</button>
+		-->
+		<!-- : is the shorthand of v-bind -->
+		<button :title="newTitle" >Hover Over Me</button>
+
+		<h1 :class="className">hello world</h1>
+		
+		<!-- class color-red will be applyed to this button if the expression evaluates to true  -->
+		<button :class="{ 'color-red' : isLoading }" @click='toggleClass' >toggle me</button>
+
+	</div>
+
+	<script type="text/javascript" src="https://unpkg.com/vue@2.4.4/dist/vue.js"></script>
+	
+	<script>
+		
+		var app = new Vue({
+			
+			el: '#root',
+
+			data: {
+				newTitle : 'Now the title is being set through JavaScript',
+				className : 'color-red',
+				isLoading : false
+			},
+
+			methods: {
+
+				addName() {
+
+					this.names.push(this.newName);
+					this.newName = '';
+				},
+
+				toggleClass(){
+					this.isLoading = !this.isLoading;
+				}
+
+			},
+
+		});
+
+	</script>
+
+
+</body>
+</html>
