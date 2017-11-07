@@ -1,0 +1,103 @@
+<!--
+    
+  Toolbar
+
+   <v-toolbar-side-icon>Pufweb</v-toolbar-side-icon>
+      
+    <v-toolbar-title class="white--text"> {{ isLogged }}</v-toolbar-title>  
+    
+    <v-text-field  class="mx-5"
+      v-model="searchText"
+      label="search"
+      solo append-icon="search"
+      hide-details single-line>
+     </v-text-field>
+
+    <v-btn outline color="white">Registrarse</v-btn>
+    <v-btn outline color="white">Ingresar</v-btn>
+
+    <v-btn icon>
+      <v-icon>more_vert</v-icon>
+    </v-btn>
+
+
+-->
+
+
+<!-- 
+  
+  flexbox
+  
+  <v-container grid-list-xl text-xs-center>
+
+    <v-layout row wrap>
+
+      <v-flex xs12 md6>
+        <v-card dark color="primary">
+          <v-card-text class="px-0">12</v-card-text>
+        </v-card>
+      </v-flex>
+
+      <v-flex xs12>
+        <v-card dark color="primary">
+          <v-card-text class="px-0">12</v-card-text>
+        </v-card>
+      </v-flex>
+      <v-flex xs6 v-for="i in 2" :key="i">
+        <v-card dark color="secondary">
+          <v-card-text class="px-0">6</v-card-text>
+        </v-card>
+      </v-flex>
+      <v-flex xs4 v-for="i in 3" :key="i">
+        <v-card dark color="primary">
+          <v-card-text class="px-0">4</v-card-text>
+        </v-card>
+      </v-flex>
+      <v-flex xs3 v-for="i in 4" :key="i">
+        <v-card dark color="secondary">
+          <v-card-text class="px-0">3</v-card-text>
+        </v-card>
+      </v-flex>
+      <v-flex xs2 v-for="i in 6" :key="i">
+        <v-card dark color="primary">
+          <v-card-text class="px-0">2</v-card-text>
+        </v-card>
+      </v-flex>
+      <v-flex xs1 v-for="i in 12" :key="i">
+        <v-card dark color="secondary">
+          <v-card-text class="px-0">1</v-card-text>
+        </v-card>
+      </v-flex>
+
+    </v-layout>
+
+  </v-container>
+
+
+
+
+-->
+
+
+<!-- main app 
+
+
+  <div id="app">
+    
+    <MainToolbarComponent v-bind:is-logged="Logged" />
+
+    <router-view/>
+
+     <v-layout row justify-center>
+
+        <div style="margin : 150px;">
+          {{ message }}
+        </div>
+  
+     </v-layout> 
+    
+    <input v-model="Logged" placeholder="edit me">
+
+  </div>
+
+-->
