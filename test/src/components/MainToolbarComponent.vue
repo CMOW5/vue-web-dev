@@ -13,14 +13,22 @@
       hide-details single-line>
     </v-text-field>
     
-    <div class="hidden-sm-and-down">
-      <v-btn outline color="white"  v-on:click.native="showRegisterModal" >Registrarse</v-btn>
-      <v-btn outline color="white">Ingresar</v-btn>
-
-    </div>
+    <v-btn icon >
+      <v-icon>search</v-icon>
+    </v-btn>
+    <v-btn icon v-on:click.native="showShopsModal">
+      <v-icon>apps</v-icon>
+    </v-btn>
+    <v-btn icon>
+      <v-icon>refresh</v-icon>
+    </v-btn>
+    <v-btn icon>
+      <v-icon>more_vert</v-icon>
+    </v-btn>
 
     <!-- modals -->
     <RegisterComponent/>
+    <ShopsModalComponent/>
    
   </v-toolbar>
 
@@ -31,6 +39,8 @@
 <script>
 
 import RegisterComponent from './modals/RegisterComponent'
+import ShopsModalComponent from './modals/ShopsModalComponent'
+
 import Vue from 'vue'
 import EventBus from '../utils/EventBus';
 
@@ -40,7 +50,7 @@ export default {
       //isLogged : Boolean
       isLogged : String
   },
-  components: { RegisterComponent },
+  components: { RegisterComponent, ShopsModalComponent },
   data () {
     return {
       dialog : false,
@@ -51,8 +61,8 @@ export default {
     showRegisterModal: function () {
       EventBus.$emit('SHOW_REGISTER_MODAL', 1);
     },
-    show (){
-      console.log('show');
+    showShopsModal: function () {
+      EventBus.$emit('SHOW_SHOPS_MODAL', 1);
     }
   }
 }
